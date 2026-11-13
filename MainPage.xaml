@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CadastroEventos.MainPage"
+             Title="Cadastro" BackgroundColor="{StaticResource Background}">
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="12">
+            <Label Text="Cadastro de Eventos" FontSize="28" FontAttributes="Bold" TextColor="{StaticResource Primary}" />
+            <Label Text="Preencha os dados do seu evento" FontSize="14" />
+            <Label Text="Nome do evento" FontAttributes="Bold" />
+            <Entry Placeholder="Ex.: Feira de Tecnologia" Text="{Binding Nome, Mode=TwoWay}" />
+            <Label Text="Data de início" FontAttributes="Bold" />
+            <DatePicker Date="{Binding DataInicio, Mode=TwoWay}" />
+            <Label Text="Data de término" FontAttributes="Bold" />
+            <DatePicker Date="{Binding DataTermino, Mode=TwoWay}" />
+            <Label Text="Número de participantes" FontAttributes="Bold" />
+            <Entry x:Name="ParticipantesEntry" Keyboard="Numeric" Placeholder="Ex.: 50" Text="1" />
+            <Label Text="Local do evento" FontAttributes="Bold" />
+            <Entry Placeholder="Ex.: Auditório Central" Text="{Binding Local, Mode=TwoWay}" />
+            <Label Text="Custo por participante (R$)" FontAttributes="Bold" />
+            <Entry x:Name="CustoEntry" Keyboard="Numeric" Placeholder="Ex.: 25,50" />
+            <Button Text="CADASTRAR E VER RESUMO" Clicked="Cadastrar_Clicked"
+                    BackgroundColor="{StaticResource Primary}" TextColor="White"
+                    CornerRadius="12" HeightRequest="54" Margin="0,16,0,0" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
